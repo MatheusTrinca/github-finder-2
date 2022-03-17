@@ -7,19 +7,21 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import { GithubProvider } from './context/github/GithubContext';
 import { AlertProvider } from './context/alert/AlertContext';
+import User from './pages/User';
 
 function App() {
   return (
     <GithubProvider>
       <AlertProvider>
         <Router>
-          <div className="flex flex-col justify-between h-screen bg-gray-700">
+          <div className="container flex flex-col h-screen justify-between bg-gray-700">
             <Navbar />
-            <main className="container mx-auto px-3 pb-12">
+            <main className="w-full mx-auto px-3 pb-12 bg-gray-700">
               <Alert />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/user/:login" element={<User />} />
                 <Route path="/notfound" element={<NotFound />} />
                 <Route path="/*" element={<NotFound />} />
               </Routes>

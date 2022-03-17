@@ -4,7 +4,7 @@ import AlertContext from '../../context/alert/AlertContext';
 
 const UserSearch = () => {
   const { users, searchUsers, clearUsers } = useContext(GithubContext);
-  const { alert, setAlert } = useContext(AlertContext);
+  const { setAlert } = useContext(AlertContext);
 
   const [text, setText] = useState('');
 
